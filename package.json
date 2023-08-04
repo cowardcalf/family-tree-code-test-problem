@@ -1,5 +1,6 @@
 {
   "name": "family-tree-code-test-problem",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

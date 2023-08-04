@@ -1,0 +1,9 @@
+.questionInput {
+  display: flex;
+  margin-right: 20px;
+}
+
+.questionInputTitle {
+  min-width: 40px;
+  padding-right: 5px;
+}
