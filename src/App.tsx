@@ -1,7 +1,7 @@
 import React from "react";
 // import logo from "./logo.svg";
 import "./App.css";
-import RootContainer from "./components/rootContainer/RootContainer";
+import AppMain from "./components/AppMain";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         </a> */}
         <p>Family Tree Code Test Problem</p>
       </header>
-      <RootContainer />
+      <AppMain />
     </div>
   );
 }
