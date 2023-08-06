@@ -1,8 +1,9 @@
 import { Person } from "../types/person";
 import { Gender } from "../types/gender";
+import { PersonMap } from "../types/personMap";
 
 export const buildData = (persons: Person[]) => {
-  const personMap: Record<string, Person> = {};
+  const personMap: PersonMap = {};
   // Init the map for each person
   persons.forEach(p => {
     personMap[p.name] = {

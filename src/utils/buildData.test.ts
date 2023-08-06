@@ -1,11 +1,11 @@
 import { INIT_PERSONS } from "../data/initData";
 import { Gender } from "../types/gender";
-import { Person } from "../types/person";
+import { PersonMap } from "../types/personMap";
 import { buildData } from "./buildData";
 
 describe("Test buildData", () => {
   test("Should return the person map properly", () => {
-    const expected: Record<string, Person> = {
+    const expected: PersonMap = {
       "King Shan": {
         name: "King Shan",
         spouse: "Queen Anga",
