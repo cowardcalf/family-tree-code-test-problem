@@ -1,0 +1,9 @@
+.questionListInput {
+  display: flex;
+  margin-right: 20px;
+}
+
+.questionListInputTitle {
+  min-width: 40px;
+  padding-right: 5px;
+}
