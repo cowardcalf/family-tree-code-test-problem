@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+# This is an implement of the answer of the Family Tree Code Test Problem
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+So far the problem 1 and 2 are done.
 
-## Available Scripts
+## About this app
 
-In the project directory, you can run:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) + `Typescript`.
 
-### `npm start`
+I've also added libraries including `ESlint`, `react-redux`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To make it simple, `webpack` and other styling libs like `styled-component` or SCSS are not involved.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Unit tests added for the util functions.
 
-### `npm test`
+## The data in the app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app uses a single data source (initialized from the problem's sample), all questions use the same source.
 
-### `npm run build`
+Any update performed in a question (eg. Q2), will update the data, and reflect in other questions. (eg. Add a child in Q2, then search a relevant relation in Q1 will show the difference)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The reset button will set the data back to the original one.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Run this project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The package I submitted includes the built version in the build folder, can be run by opening the `index.html` file in browser.
 
-### `npm run eject`
+Otherwise, it can be run by the scripts `yarn start` (need the node v16 setup and `yarn` installed and `yarn install`).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Assumptions
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Each person's name is unique in the family tree. (Avoid using uid for each person)
+2. A pair of couples has one and only one male and female.
+3. If a person has parents, he/she must have a father and a mother.
+4. Adding child must have both mother and father existing.
+5. Granddaughter relation includes the further granddaughters (Eg. grand-granddaughter)
