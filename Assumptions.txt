@@ -1,3 +1,5 @@
 1. Each person's name is unique in the family tree. (Avoid using uid for each person)
 2. A pair of couples has one and only one male and female.
 3. If a person has parents, he/she must have a father and a mother.
+4. Adding child must have both mother and father existing.
+5. Granddaughter relation includes the further granddaughters (Eg. grand-granddaughter)

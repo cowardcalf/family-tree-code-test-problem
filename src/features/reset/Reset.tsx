@@ -6,7 +6,7 @@ import { initData } from "../personMap/personMap";
 const Reset = () => {
   const dispatch = useAppDispatch();
 
-  return <ResetButton onClick={() => dispatch(initData)} />;
+  return <ResetButton onClick={() => dispatch(initData())} />;
 };
 
 export default Reset;

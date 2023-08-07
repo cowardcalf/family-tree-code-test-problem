@@ -1,8 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import { PersonMap } from "../../types/personMap";
 import { buildData } from "../../utils/buildData";
 import { INIT_PERSONS } from "../../data/initData";
+import { addChild as addChildUtil } from "../../utils/addChild";
+import { Gender } from "../../types/gender";
 
 type PersonMapState = PersonMap;
 
@@ -29,6 +31,13 @@ export const personMapSlice = createSlice({
   reducers: {
     initData: () => {
       return initialState;
+    },
+    addChild: (state: PersonMapState, action: PayloadAction<{ mother: string; child: string; gender: Gender }>) => {
+      const { mother, child, gender } = action.payload;
+      addChildUtil(mother, child, gender, state);
+      console.log("addChild : new state");
+      console.log(state["Lavnya"]);
+      return state;
     }
   }
   // The `extraReducers` field lets the slice handle actions defined elsewhere,
@@ -48,7 +57,7 @@ export const personMapSlice = createSlice({
   // },
 });
 
-export const { initData } = personMapSlice.actions;
+export const { initData, addChild } = personMapSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
