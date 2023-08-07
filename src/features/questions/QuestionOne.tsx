@@ -1,19 +1,17 @@
 import React, { useState } from "react";
-import QuestionContainer from "../questionContainer/QuestionContainer";
+import QuestionContainer from "../../components/questionContainer/QuestionContainer";
 import { problems } from "../../constants/problems";
-import QuestionListInput from "../questionListInput/QuestionListInput";
+import QuestionListInput from "../../components/questionListInput/QuestionListInput";
 import { Relation, RelationsArray } from "../../types/relation";
-import { PersonMap } from "../../types/personMap";
 import { findPersonOfRelation } from "../../utils/findPersonOfRelation";
+import { useSelector } from "react-redux";
+import { getPersonMap } from "../personMap/personMap";
 
-type QuestionOneProps = {
-  personMap: PersonMap;
-};
-
-const QuestionOne = ({ personMap }: QuestionOneProps) => {
+const QuestionOne = () => {
   const [person, setPerson] = useState("");
   const [relation, setRelation] = useState("");
   const [result, setResult] = useState<string[] | null>(null);
+  const personMap = useSelector(getPersonMap);
 
   const personNames = Object.keys(personMap);
 
